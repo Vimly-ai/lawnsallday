@@ -1,46 +1,31 @@
-# Lawns All Day - Professional Lawn Care Services Website
+# Lawns All Day - Professional Lawn Care & Landscaping Website
 
-Professional website for Lawns All Day, serving the Treasure Valley area in Idaho with comprehensive lawn care services.
+A high-performance, SEO-optimized website for Lawns All Day, serving the Treasure Valley region of Idaho with professional lawn care and landscaping services.
 
 ## 🌱 Overview
 
-This is a modern, responsive website built with Astro and Tailwind CSS for Lawns All Day, a lawn care service company operating in Boise, Meridian, Eagle, Nampa, and surrounding areas.
+This website is built with Astro, Tailwind CSS, and TypeScript, featuring:
+- 139 total pages with location and service-specific content
+- Advanced SEO optimization with schema markup
+- Mobile-responsive design
+- Fast page loads with optimized images
+- Structured data for local business
+- Comprehensive sitemap
 
-### Key Features
-- ⚡ Fast, static site generation with Astro
-- 📱 Fully responsive design
-- 🎨 Modern UI with Tailwind CSS
-- 📞 Click-to-call functionality
-- 📧 Contact form integration
-- 🗺️ Location-specific landing pages
-- 🔍 SEO optimized
-- 🚀 Netlify-ready deployment
+## 🛠️ Tech Stack
 
-## 📋 Services Offered
+- **Framework**: Astro 4.4.0
+- **Styling**: Tailwind CSS 3.4.1
+- **Language**: TypeScript 5.3.3
+- **Deployment**: Netlify
+- **SEO**: Schema.org structured data
 
-- Lawn Mowing
-- Landscaping
-- Tree Trimming
-- Sprinkler Repair
-- Fertilization
-- Weed Control
-
-## 📍 Service Areas
-
-- Boise
-- Meridian
-- Eagle
-- Nampa
-- Caldwell
-- Star
-- Middleton
-- Kuna
-
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+
+- Node.js 18.x or higher
+- npm or yarn package manager
 
 ### Installation
 
@@ -55,19 +40,19 @@ cd lawnsallday
 npm install
 ```
 
-3. Start the development server:
+3. Generate all service-location pages:
+```bash
+npm run generate
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Build for production:
+5. Build for production:
 ```bash
 npm run build
-```
-
-5. Preview production build:
-```bash
-npm run preview
 ```
 
 ## 📁 Project Structure
@@ -75,87 +60,133 @@ npm run preview
 ```
 lawnsallday/
 ├── src/
-│   ├── components/
+│   ├── components/       # Reusable components
 │   │   ├── Header.astro
 │   │   ├── Footer.astro
 │   │   ├── Hero.astro
-│   │   └── SEO.astro
-│   ├── layouts/
-│   │   ├── BaseLayout.astro
-│   │   ├── ServiceLayout.astro
-│   │   └── LocationLayout.astro
-│   ├── pages/
-│   │   ├── index.astro
+│   │   ├── SEO.astro
+│   │   ├── ServiceHero.astro
+│   │   ├── LocationHero.astro
+│   │   └── ...
+│   ├── layouts/          # Page layouts
+│   │   └── Layout.astro
+│   ├── pages/            # Route pages
+│   │   ├── index.astro   # Homepage
 │   │   ├── about.astro
 │   │   ├── contact.astro
 │   │   ├── services.astro
-│   │   ├── [service pages].astro
-│   │   └── [location pages].astro
-│   └── styles/
-│       └── global.css
-├── public/
+│   │   ├── locations/    # Location hub pages
+│   │   ├── services/     # Service hub pages
+│   │   └── [service-location pages]
+│   └── styles/           # Global styles
+├── public/              # Static assets
 │   ├── images/
 │   ├── robots.txt
 │   └── sitemap.xml
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── package.json
-└── netlify.toml
+├── scripts/             # Build scripts
+│   ├── generate-site.js # Page generator
+│   └── update-sitemap.js
+└── AI Ranking Local Page Content  Generated Pages.csv
 ```
 
-## 🎨 Customization
+## 🌐 Site Structure
 
-### Adding Your Logo
-Place your logo files in the `public/images/` directory:
-- `lawns-all-day-logo.png` - Main logo
-- `lawns-all-day-3d.png` - 3D decorative version
+### Service Areas (6 locations)
+- Nampa, Idaho
+- Meridian, Idaho
+- Boise, Idaho
+- Eagle, Idaho
+- Kuna, Idaho
+- Caldwell, Idaho
 
-### Updating Contact Information
-Contact information is located throughout the site. Primary locations:
-- Phone: (208) 989-8378
-- Email: info@lawnsallday.com
+### Services (19 types)
+- Lawn mowing and edging
+- Fertilization and weed control
+- Sprinkler system installation
+- Landscaping services
+- Tree and bush trimming
+- Property management services
+- And 13 more specialized services
 
-To update, search and replace these values in all `.astro` files.
+### Page Types
+1. **Homepage** - Main landing page
+2. **Service Hub Pages** - Overview of each service type
+3. **Location Hub Pages** - Overview of services in each city
+4. **Service-Location Pages** - Specific service in specific location (114 pages)
 
-### Colors
-The site uses a green color scheme defined in `tailwind.config.mjs`. Main colors:
-- Primary Green: `#10b981`
-- Dark Green: `#059669`
-- Light Green: `#f0f9f4`
+## 🔧 Development
+
+### Commands
+
+| Command | Action |
+|---------|--------|
+| `npm run dev` | Start development server at localhost:4321 |
+| `npm run build` | Build production site |
+| `npm run preview` | Preview production build |
+| `npm run generate` | Generate all service-location pages |
+| `npm run astro` | Run Astro CLI commands |
+
+### Adding New Pages
+
+1. Add page data to the CSV file
+2. Run `npm run generate` to create the pages
+3. Run `npm run build` to test the production build
+
+### Image Requirements
+
+Add these images to `/public/images/`:
+- `lawns-all-day-logo.png` - Company logo
+- `lawns-all-day-3d.png` - 3D emblem/badge
+
+Add service images to `/public/images/services/`:
+- `lawn-mowing-and-edging.jpg`
+- `fertilization-and-weed-control.jpg`
+- `sprinkler-system-installation.jpg`
+- `landscaping-services.jpg`
+- `tree-and-bush-trimming.jpg`
+
+Add location images to `/public/images/locations/`:
+- `nampa-idaho.jpg`
+- `meridian-idaho.jpg`
+- `boise-idaho.jpg`
+- `eagle-idaho.jpg`
+- `kuna-idaho.jpg`
+- `caldwell-idaho.jpg`
 
 ## 🚀 Deployment
 
-### Netlify (Recommended)
+The site is configured for deployment on Netlify:
 
-1. Push code to GitHub
-2. Connect GitHub repo to Netlify
-3. Deploy with these settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-   - Node version: 18
+1. Connect your GitHub repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
+4. Deploy!
 
-The `netlify.toml` file includes optimized settings for deployment.
+The `netlify.toml` file includes:
+- Proper headers for security
+- Caching rules for performance
+- Redirect rules
 
-### Environment Variables
-No environment variables are required for basic deployment.
+## 📍 SEO Features
 
-## 📱 Contact Information
+- **Schema.org Markup**: LocalBusiness and Service schemas
+- **Meta Tags**: Optimized title and description for each page
+- **Canonical URLs**: Proper canonical tags
+- **Sitemap**: Auto-generated XML sitemap
+- **Robots.txt**: Configured for search engines
+- **Local SEO**: Location-specific content with zip codes
+- **Mobile Optimization**: Responsive design
+
+## 📧 Contact Information
 
 - **Phone**: (208) 989-8378
-- **Email**: info@lawnsallday.com
-- **Service Area**: Treasure Valley, Idaho
-
-## 🛠️ Technologies Used
-
-- [Astro](https://astro.build) - Static Site Generator
-- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
-- [TypeScript](https://www.typescriptlang.org) - Type safety
-- [Netlify](https://netlify.com) - Hosting platform
+- **Email**: Brad@lawnsallday.com
+- **Address**: 6424 E Sherryanna Ln, Nampa, ID 83687
 
 ## 📄 License
 
-© 2024 Lawns All Day. All rights reserved.
+This project is proprietary and confidential.
 
 ---
 
-**Need lawn care services?** Visit [lawnsallday.com](https://lawnsallday.com) or call (208) 989-8378 for a free quote!
+Built with ❤️ by [Vimly AI](https://vimly.ai)
