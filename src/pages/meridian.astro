@@ -1,0 +1,108 @@
+---
+import LocationLayout from '../layouts/LocationLayout.astro';
+
+const pageTitle = "Lawn Care Services in Meridian, ID | Lawns All Day";
+const pageDescription = "Professional lawn care services in Meridian, Idaho. Expert mowing, landscaping, and maintenance for Meridian's growing community. Call (208) 989-8378.";
+---
+
+<LocationLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  city="Meridian"
+  population="118,000+"
+  established="1893"
+>
+  <div slot="intro">
+    <p class="text-lg text-gray-700 mb-4">
+      Meridian has transformed from Idaho's dairy center to one of the fastest-growing 
+      cities in the nation. With new developments and established neighborhoods alike, 
+      Lawns All Day provides professional lawn care services that keep pace with 
+      Meridian's dynamic growth.
+    </p>
+    <p class="text-lg text-gray-700">
+      From The Village to Lochsa Falls, from established neighborhoods near Downtown 
+      to new developments south of the interstate, we understand the diverse lawn 
+      care needs throughout Meridian. Our services help maintain property values 
+      and community beauty in this thriving city.
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Meridian-Specific Lawn Care Services</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">New Development Services</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• New sod establishment and care</li>
+          <li>• Builder's landscape maintenance</li>
+          <li>• Soil amendment for new construction</li>
+          <li>• Irrigation system optimization</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Established Lawn Care</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Mature tree care and trimming</li>
+          <li>• Lawn renovation and overseeding</li>
+          <li>• Landscape modernization</li>
+          <li>• Water-wise conversions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Popular Meridian Neighborhoods We Serve</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-gray-50 rounded-lg p-3 text-center">The Village</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Lochsa Falls</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Paramount</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Century Farm</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Tuscany</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Spurwing</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Brighton</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Bridgetower</div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Supporting Meridian's Growth</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-gray-700 mb-4">
+          As Meridian continues to grow, maintaining beautiful lawns becomes even 
+          more important for preserving the quality of life that attracts so many 
+          to our city. Whether you're in a brand-new subdivision or an established 
+          neighborhood, we provide the consistent, quality care your lawn deserves.
+        </p>
+        <p class="text-gray-700">
+          We work with HOAs, property managers, and individual homeowners to ensure 
+          Meridian remains one of the most desirable places to live in the Treasure 
+          Valley.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">Meridian Service Benefits</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>✓ HOA compliance expertise</li>
+          <li>✓ New construction specialists</li>
+          <li>✓ Water conservation programs</li>
+          <li>✓ Community-focused service</li>
+          <li>✓ Flexible scheduling options</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 rounded-2xl p-8">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">Special Offer for Meridian Residents</h3>
+    <p class="text-gray-700 mb-4">
+      New customers in Meridian receive 10% off their first month of service. 
+      Join your neighbors in choosing Lawns All Day for professional, reliable 
+      lawn care.
+    </p>
+    <a href="tel:+12089898378" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+      Call Now: (208) 989-8378
+    </a>
+  </div>
+</LocationLayout>

@@ -1,0 +1,94 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const pageTitle = "Lawn Mowing Services in Treasure Valley | Lawns All Day";
+const pageDescription = "Professional lawn mowing services in Boise, Meridian, Eagle, and surrounding areas. Weekly, bi-weekly, or custom schedules. Call (208) 989-8378 for a free quote.";
+
+const benefits = [
+  "Consistent, professional cuts every time",
+  "Flexible scheduling options",
+  "Professional-grade equipment",
+  "Edge trimming included",
+  "Debris cleanup after each service",
+  "Seasonal height adjustments"
+];
+
+const process = [
+  { step: "Initial Assessment", description: "We evaluate your lawn's size, type, and specific needs" },
+  { step: "Custom Schedule", description: "Choose weekly, bi-weekly, or custom mowing frequency" },
+  { step: "Professional Service", description: "Our crew arrives on schedule with professional equipment" },
+  { step: "Quality Check", description: "We ensure every detail meets our high standards" }
+];
+---
+
+<ServiceLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  service="Lawn Mowing"
+  benefits={benefits}
+  process={process}
+>
+  <div slot="intro">
+    Keep your lawn looking pristine with our professional mowing services. 
+    We provide reliable, scheduled lawn care that keeps your property looking 
+    its best throughout the growing season.
+  </div>
+
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Lawn Mowing Service Includes:</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Standard Service</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Professional mowing at optimal height</li>
+          <li>• Edge trimming along walkways and driveways</li>
+          <li>• Grass clipping cleanup</li>
+          <li>• Basic debris removal</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Premium Add-Ons</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Detailed edging along all borders</li>
+          <li>• Leaf removal and cleanup</li>
+          <li>• Fertilization programs</li>
+          <li>• Weed control treatments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-16">
+    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+      <h4 class="text-xl font-bold text-gray-900 mb-2">Weekly Service</h4>
+      <p class="text-gray-700 mb-4">Perfect for maintaining a pristine appearance during peak growing season</p>
+      <a href="tel:+12089898378" class="text-green-600 font-semibold hover:text-green-700">Get Quote →</a>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+      <h4 class="text-xl font-bold text-gray-900 mb-2">Bi-Weekly Service</h4>
+      <p class="text-gray-700 mb-4">Ideal for moderate growth periods and budget-conscious homeowners</p>
+      <a href="tel:+12089898378" class="text-green-600 font-semibold hover:text-green-700">Get Quote →</a>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+      <h4 class="text-xl font-bold text-gray-900 mb-2">Custom Schedule</h4>
+      <p class="text-gray-700 mb-4">Tailored to your specific needs and lawn growth patterns</p>
+      <a href="tel:+12089898378" class="text-green-600 font-semibold hover:text-green-700">Get Quote →</a>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Professional Lawn Mowing Matters</h3>
+    <p class="text-gray-700 mb-4">
+      Regular, professional lawn mowing does more than just keep your grass short. 
+      It promotes healthy growth, prevents pest infestations, and maintains your 
+      property's curb appeal. Our trained professionals know the optimal cutting 
+      height for different grass types and seasons, ensuring your lawn stays 
+      healthy year-round.
+    </p>
+    <p class="text-gray-700">
+      With Lawns All Day, you get consistent, reliable service from professionals 
+      who treat your lawn as if it were their own. No more weekend mowing chores – 
+      just a beautiful lawn you can enjoy.
+    </p>
+  </div>
+</ServiceLayout>

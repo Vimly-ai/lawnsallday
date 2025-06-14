@@ -1,0 +1,106 @@
+---
+import LocationLayout from '../layouts/LocationLayout.astro';
+
+const pageTitle = "Lawn Care Services in Caldwell, ID | Lawns All Day";
+const pageDescription = "Professional lawn care services in Caldwell, Idaho. Mowing, landscaping, and maintenance for Caldwell's agricultural community. Call (208) 989-8378.";
+---
+
+<LocationLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  city="Caldwell"
+  population="60,000+"
+  established="1883"
+>
+  <div slot="intro">
+    <p class="text-lg text-gray-700 mb-4">
+      Caldwell blends small-town charm with growing suburban neighborhoods, creating 
+      diverse lawn care needs throughout the community. From historic properties near 
+      downtown to new developments on former farmland, Lawns All Day provides reliable, 
+      professional services tailored to Caldwell's unique character.
+    </p>
+    <p class="text-lg text-gray-700">
+      As the county seat of Canyon County and home to The College of Idaho, Caldwell 
+      maintains high standards for property appearance. We help residents and businesses 
+      meet those standards with quality lawn care services at fair prices.
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Caldwell-Specific Services</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Agricultural Area Expertise</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Large lot maintenance</li>
+          <li>• Pasture and field edges</li>
+          <li>• Weed control for rural properties</li>
+          <li>• Irrigation ditch management</li>
+          <li>• Farm equipment friendly service</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">City Services</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Downtown business properties</li>
+          <li>• Residential lawn care</li>
+          <li>• College area maintenance</li>
+          <li>• Historic property care</li>
+          <li>• Municipal contracts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Caldwell Neighborhoods We Serve</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Downtown</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Sky Ranch</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Orchard Hills</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">College District</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Ustick Road Area</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Farmway Road</div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Understanding Caldwell's Needs</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-gray-700 mb-4">
+          Caldwell's agricultural heritage means many properties have unique challenges, 
+          from managing larger lots to dealing with agricultural water systems. Our 
+          team has experience with both traditional suburban lawns and rural properties, 
+          providing appropriate care for each setting.
+        </p>
+        <p class="text-gray-700">
+          We appreciate Caldwell's blend of old and new, and we work to preserve the 
+          community's character while helping it grow beautifully.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">Caldwell Benefits</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>🚜 Large property specialists</li>
+          <li>🌾 Agricultural area experience</li>
+          <li>🏘️ Subdivision maintenance</li>
+          <li>⏰ Flexible rural scheduling</li>
+          <li>💵 Competitive local pricing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 rounded-2xl p-8">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">Caldwell Community Partner</h3>
+    <p class="text-gray-700 mb-4">
+      We're proud to serve the Caldwell community and support local events and 
+      organizations. When you choose Lawns All Day, you're supporting a business 
+      that invests back in Caldwell.
+    </p>
+    <a href="/contact" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+      Get Your Free Caldwell Quote
+    </a>
+  </div>
+</LocationLayout>

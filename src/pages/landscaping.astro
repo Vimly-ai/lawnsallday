@@ -1,0 +1,125 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const pageTitle = "Landscaping Services in Treasure Valley | Lawns All Day";
+const pageDescription = "Transform your outdoor space with professional landscaping services in Boise, Meridian, and Eagle. Design, installation, and maintenance. Call (208) 989-8378.";
+
+const benefits = [
+  "Custom landscape design",
+  "Professional installation",
+  "Drought-resistant options",
+  "Increased property value",
+  "Year-round beauty",
+  "Expert plant selection"
+];
+
+const process = [
+  { step: "Consultation", description: "Free on-site evaluation and design discussion" },
+  { step: "Design Plan", description: "Custom landscape design tailored to your vision" },
+  { step: "Installation", description: "Professional installation with quality materials" },
+  { step: "Maintenance", description: "Optional ongoing care to keep everything thriving" }
+];
+---
+
+<ServiceLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  service="Landscaping"
+  benefits={benefits}
+  process={process}
+>
+  <div slot="intro">
+    Create the outdoor oasis you've always dreamed of with our comprehensive 
+    landscaping services. From design to installation, we transform ordinary 
+    yards into extraordinary spaces.
+  </div>
+
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Landscaping Services</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Design & Installation</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Custom landscape design</li>
+          <li>• Plant selection and installation</li>
+          <li>• Hardscape features (patios, walkways)</li>
+          <li>• Decorative rock and mulch</li>
+          <li>• Retaining walls</li>
+          <li>• Water features</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Renovation & Enhancement</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Landscape makeovers</li>
+          <li>• Garden bed renovation</li>
+          <li>• Xeriscaping conversions</li>
+          <li>• Drainage solutions</li>
+          <li>• Outdoor lighting</li>
+          <li>• Seasonal color programs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Popular Landscaping Projects</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-green-600 text-white p-4">
+          <h4 class="text-xl font-bold">Front Yard Makeover</h4>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-700 mb-4">Boost curb appeal with beautiful plantings, defined borders, and eye-catching features.</p>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>✓ New plantings</li>
+            <li>✓ Decorative rock</li>
+            <li>✓ Border definition</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-green-600 text-white p-4">
+          <h4 class="text-xl font-bold">Backyard Oasis</h4>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-700 mb-4">Create your personal retreat with patios, gardens, and entertainment areas.</p>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>✓ Patio installation</li>
+            <li>✓ Garden design</li>
+            <li>✓ Privacy plantings</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-green-600 text-white p-4">
+          <h4 class="text-xl font-bold">Water-Wise Landscape</h4>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-700 mb-4">Beautiful, drought-resistant landscaping perfect for Idaho's climate.</p>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>✓ Native plants</li>
+            <li>✓ Drip irrigation</li>
+            <li>✓ Decorative mulch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Idaho-Friendly Plant Selection</h3>
+    <p class="text-gray-700 mb-4">
+      Our landscaping experts understand Idaho's unique climate and soil conditions. 
+      We select plants that thrive in our area, ensuring your landscape stays 
+      beautiful with minimal maintenance. From colorful perennials to hardy shrubs 
+      and trees, we choose varieties that provide year-round interest while being 
+      water-efficient and cold-hardy.
+    </p>
+    <p class="text-gray-700">
+      Whether you prefer a traditional lawn-centered landscape or a modern 
+      xeriscaped design, we create outdoor spaces that reflect your style while 
+      working in harmony with our local environment.
+    </p>
+  </div>
+</ServiceLayout>

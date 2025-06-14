@@ -1,0 +1,95 @@
+---
+import LocationLayout from '../layouts/LocationLayout.astro';
+
+const pageTitle = "Lawn Care Services in Boise, ID | Lawns All Day";
+const pageDescription = "Professional lawn care services in Boise, Idaho. Mowing, landscaping, tree trimming, and more. Local experts serving Boise since establishment. Call (208) 989-8378.";
+---
+
+<LocationLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  city="Boise"
+  population="235,000+"
+  established="1863"
+>
+  <div slot="intro">
+    <p class="text-lg text-gray-700 mb-4">
+      As Idaho's capital and largest city, Boise presents unique lawn care challenges 
+      with its semi-arid climate, hot summers, and cold winters. At Lawns All Day, 
+      we've mastered the art of maintaining beautiful lawns in Boise's distinctive 
+      environment.
+    </p>
+    <p class="text-lg text-gray-700">
+      From the historic North End to the Boise Bench, from Downtown to Southeast Boise, 
+      we provide reliable, professional lawn care services tailored to each neighborhood's 
+      specific needs. Our local expertise means your lawn gets exactly what it needs, 
+      when it needs it.
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Boise Lawn Care Challenges We Solve</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Climate Considerations</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Hot, dry summers requiring efficient irrigation</li>
+          <li>• Cold winters needing proper dormancy care</li>
+          <li>• Spring transition periods with variable weather</li>
+          <li>• Clay and sandy soil amendments</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Common Boise Lawn Issues</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Summer drought stress</li>
+          <li>• Billbug and grub infestations</li>
+          <li>• Necrotic ring spot disease</li>
+          <li>• Compacted soil from clay content</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Neighborhoods We Serve in Boise</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-gray-50 rounded-lg p-3 text-center">North End</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Downtown</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Boise Bench</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">West Boise</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Southeast Boise</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Warm Springs</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Harris Ranch</div>
+      <div class="bg-gray-50 rounded-lg p-3 text-center">Barber Valley</div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Boise Homeowners Choose Lawns All Day</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-gray-700 mb-4">
+          We understand Boise's unique growing conditions. Our team knows that lawns 
+          near the foothills need different care than those in the valley floor. We 
+          adjust our services based on your specific location, soil type, and 
+          microclimate.
+        </p>
+        <p class="text-gray-700">
+          As a local company, we're invested in making Boise more beautiful, one 
+          lawn at a time. We're your neighbors, and we treat your property with 
+          the same care we give our own.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">Quick Facts</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>📍 <span class="font-medium">Service Area:</span> All Boise neighborhoods</li>
+          <li>🚗 <span class="font-medium">Response Time:</span> Same-day available</li>
+          <li>📅 <span class="font-medium">Scheduling:</span> Weekly, bi-weekly, or custom</li>
+          <li>✅ <span class="font-medium">Licensed:</span> Idaho certified professionals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</LocationLayout>

@@ -1,0 +1,114 @@
+---
+import LocationLayout from '../layouts/LocationLayout.astro';
+
+const pageTitle = "Lawn Care Services in Kuna, ID | Lawns All Day";
+const pageDescription = "Professional lawn care services in Kuna, Idaho. Mowing, landscaping, and maintenance for Kuna's gateway community. Call (208) 989-8378.";
+---
+
+<LocationLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  city="Kuna"
+  population="24,000+"
+  established="1864"
+>
+  <div slot="intro">
+    <p class="text-lg text-gray-700 mb-4">
+      Known as the "Gateway to the Birds of Prey," Kuna has transformed from a small 
+      agricultural town to one of Idaho's fastest-growing communities. Lawns All Day 
+      provides professional lawn care services that help new and established Kuna 
+      residents maintain beautiful properties that match their community pride.
+    </p>
+    <p class="text-lg text-gray-700">
+      From the historic downtown to rapidly expanding subdivisions, we understand 
+      Kuna's diverse lawn care needs. Our services help maintain the community's 
+      appeal while supporting its remarkable growth.
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Kuna Lawn Care Solutions</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">New Development Services</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• New sod installation and care</li>
+          <li>• Builder cleanup services</li>
+          <li>• Initial landscape design</li>
+          <li>• Sprinkler system setup</li>
+          <li>• Soil preparation and amendment</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Established Property Care</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Regular maintenance programs</li>
+          <li>• Landscape renovation</li>
+          <li>• Mature tree care</li>
+          <li>• Seasonal transitions</li>
+          <li>• Custom care plans</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Growing with Kuna</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-lg p-6 text-center">
+        <div class="text-3xl mb-2">🏗️</div>
+        <h4 class="font-semibold text-gray-900 mb-2">New Construction</h4>
+        <p class="text-sm text-gray-700">Expert care for newly built homes</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-6 text-center">
+        <div class="text-3xl mb-2">🏡</div>
+        <h4 class="font-semibold text-gray-900 mb-2">Established Homes</h4>
+        <p class="text-sm text-gray-700">Maintaining Kuna's original charm</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-6 text-center">
+        <div class="text-3xl mb-2">🌾</div>
+        <h4 class="font-semibold text-gray-900 mb-2">Rural Properties</h4>
+        <p class="text-sm text-gray-700">Large lot and acreage maintenance</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Supporting Kuna's Growth</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-gray-700 mb-4">
+          As Kuna continues its rapid expansion, maintaining quality lawn care becomes 
+          even more important for preserving property values and community appeal. We're 
+          committed to growing with Kuna, providing services that meet the needs of both 
+          new arrivals and long-time residents.
+        </p>
+        <p class="text-gray-700">
+          Our efficient routing through Kuna's neighborhoods ensures timely service, 
+          and our commitment to quality ensures your lawn always looks its best.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">Kuna Advantages</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>✓ New homeowner specials</li>
+          <li>✓ HOA preferred vendor</li>
+          <li>✓ Growth-ready service capacity</li>
+          <li>✓ Community event sponsor</li>
+          <li>✓ Neighbor referral rewards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+    <h3 class="text-2xl font-bold mb-4">New to Kuna? Welcome Home!</h3>
+    <p class="text-lg mb-6">
+      New Kuna residents receive 15% off their first two months of service. Let us 
+      help you settle in with one less thing to worry about.
+    </p>
+    <a href="tel:+12089898378" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
+      Claim Your New Resident Discount: (208) 989-8378
+    </a>
+  </div>
+</LocationLayout>

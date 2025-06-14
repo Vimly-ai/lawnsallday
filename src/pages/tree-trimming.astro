@@ -1,0 +1,131 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const pageTitle = "Tree Trimming Services in Treasure Valley | Lawns All Day";
+const pageDescription = "Professional tree trimming and pruning services in Boise, Meridian, Eagle. Certified arborists, safety-focused, free estimates. Call (208) 989-8378.";
+
+const benefits = [
+  "Certified, insured professionals",
+  "Improved tree health and longevity",
+  "Enhanced property safety",
+  "Better aesthetics and shape",
+  "Disease prevention",
+  "Storm damage prevention"
+];
+
+const process = [
+  { step: "Tree Assessment", description: "Expert evaluation of tree health and structure" },
+  { step: "Safety Planning", description: "Develop safe trimming strategy for your property" },
+  { step: "Professional Trimming", description: "Precise cuts using proper techniques" },
+  { step: "Complete Cleanup", description: "Full debris removal and disposal" }
+];
+---
+
+<ServiceLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  service="Tree Trimming"
+  benefits={benefits}
+  process={process}
+>
+  <div slot="intro">
+    Keep your trees healthy, safe, and beautiful with professional trimming services. 
+    Our certified team uses industry-best practices to enhance tree health while 
+    protecting your property.
+  </div>
+
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Tree Trimming Services We Offer</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Trimming & Pruning</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Crown thinning and shaping</li>
+          <li>• Dead branch removal</li>
+          <li>• Structural pruning</li>
+          <li>• Vista pruning</li>
+          <li>• Fruit tree pruning</li>
+          <li>• Ornamental tree shaping</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Safety & Health Services</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Hazard assessment</li>
+          <li>• Storm damage cleanup</li>
+          <li>• Power line clearance</li>
+          <li>• Disease diagnosis</li>
+          <li>• Emergency services</li>
+          <li>• Cabling and bracing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">When to Trim Your Trees</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Spring</h4>
+        <p class="text-sm text-gray-600">Flowering trees after bloom</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Summer</h4>
+        <p class="text-sm text-gray-600">Dead branch removal</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Fall</h4>
+        <p class="text-sm text-gray-600">Dormant season prep</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Winter</h4>
+        <p class="text-sm text-gray-600">Major structural work</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Professional Tree Care Matters</h3>
+    <p class="text-gray-700 mb-4">
+      Proper tree trimming is both an art and a science. Our certified arborists 
+      understand tree biology and use precise techniques to promote healthy growth 
+      while maintaining structural integrity. Poor trimming can damage trees 
+      permanently, but professional care ensures your trees remain assets to 
+      your property for years to come.
+    </p>
+    <p class="text-gray-700">
+      Regular professional trimming prevents storm damage, improves tree health, 
+      enhances your property's appearance, and can even increase property values. 
+      Trust your trees to the experts at Lawns All Day.
+    </p>
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-16">
+    <h3 class="text-lg font-bold text-gray-900 mb-2">Safety First</h3>
+    <p class="text-gray-700">
+      Tree work can be dangerous. Our team is fully licensed, insured, and trained 
+      in proper safety procedures. We use professional equipment and follow ANSI 
+      standards to protect your property and our crew.
+    </p>
+  </div>
+</ServiceLayout>

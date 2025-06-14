@@ -1,0 +1,132 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: any;
+  keywords?: string;
+  city?: string;
+  service?: string;
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  schema,
+  keywords,
+  city,
+  service,
+  bodyClass = ''
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      schema={schema}
+      keywords={keywords}
+      city={city}
+      service={service}
+    />
+  </head>
+  <body class={`font-sans antialiased ${bodyClass}`}>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Lawns All Day",
+      "description": "Lawns All Day is a reliable lawn care and landscaping company based in Nampa, Idaho, proudly serving the entire Treasure Valley, including Boise, Meridian, Caldwell, and surrounding areas.",
+      "url": "https://lawnsallday.com",
+      "telephone": "+12089898378",
+      "email": "Brad@lawnsallday.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6424 E Sherryanna Ln",
+        "addressLocality": "Nampa",
+        "addressRegion": "ID",
+        "postalCode": "83687",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "43.5407",
+        "longitude": "-116.5594"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Nampa",
+          "addressRegion": "ID"
+        },
+        {
+          "@type": "City", 
+          "name": "Boise",
+          "addressRegion": "ID"
+        },
+        {
+          "@type": "City",
+          "name": "Meridian", 
+          "addressRegion": "ID"
+        },
+        {
+          "@type": "City",
+          "name": "Eagle",
+          "addressRegion": "ID"
+        },
+        {
+          "@type": "City",
+          "name": "Kuna",
+          "addressRegion": "ID"
+        },
+        {
+          "@type": "City",
+          "name": "Caldwell",
+          "addressRegion": "ID"
+        }
+      ],
+      "serviceType": [
+        "Lawn Care",
+        "Landscaping", 
+        "Lawn Mowing",
+        "Sprinkler Repair",
+        "Mulch Delivery",
+        "Tree Trimming",
+        "Property Maintenance"
+      ],
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
+      "sameAs": [
+        "https://www.facebook.com/lawnsallday",
+        "https://www.instagram.com/lawnsallday"
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+  </body>
+</html>

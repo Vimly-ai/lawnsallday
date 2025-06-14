@@ -1,0 +1,153 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const pageTitle = "Lawn Fertilization Services in Treasure Valley | Lawns All Day";
+const pageDescription = "Professional lawn fertilization programs in Boise, Meridian, Eagle. Custom nutrient plans for thick, green grass. Call (208) 989-8378.";
+
+const benefits = [
+  "Custom fertilization programs",
+  "Soil testing included",
+  "Eco-friendly options",
+  "Seasonal adjustments",
+  "Thicker, greener grass",
+  "Disease resistance"
+];
+
+const process = [
+  { step: "Lawn Analysis", description: "Assess grass type and current health" },
+  { step: "Soil Testing", description: "Determine exact nutrient needs" },
+  { step: "Custom Program", description: "Design fertilization schedule for your lawn" },
+  { step: "Regular Applications", description: "Timely treatments for optimal results" }
+];
+---
+
+<ServiceLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  service="Fertilization"
+  benefits={benefits}
+  process={process}
+>
+  <div slot="intro">
+    Give your lawn the nutrients it needs to thrive with our professional 
+    fertilization programs. We create custom treatment plans based on your 
+    soil conditions and grass type for optimal results.
+  </div>
+
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Fertilization Programs</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Standard Program (5 Applications)</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li><span class="font-medium">Early Spring:</span> Wake-up feeding</li>
+          <li><span class="font-medium">Late Spring:</span> Growth boost</li>
+          <li><span class="font-medium">Summer:</span> Stress protection</li>
+          <li><span class="font-medium">Early Fall:</span> Recovery feeding</li>
+          <li><span class="font-medium">Late Fall:</span> Winter prep</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-3">Premium Program (7 Applications)</h4>
+        <ul class="space-y-2 text-gray-700">
+          <li>• All standard treatments</li>
+          <li>• Additional micronutrients</li>
+          <li>• Iron for deep green color</li>
+          <li>• Organic matter boost</li>
+          <li>• pH balancing</li>
+          <li>• Root stimulants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Understanding Your Lawn's Needs</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="text-4xl mb-4">🌱</div>
+        <h4 class="font-semibold text-gray-900 mb-2">Nitrogen (N)</h4>
+        <p class="text-gray-700 text-sm">Promotes leaf and blade growth for a lush, green appearance</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="text-4xl mb-4">🌿</div>
+        <h4 class="font-semibold text-gray-900 mb-2">Phosphorus (P)</h4>
+        <p class="text-gray-700 text-sm">Encourages strong root development and disease resistance</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="text-4xl mb-4">💪</div>
+        <h4 class="font-semibold text-gray-900 mb-2">Potassium (K)</h4>
+        <p class="text-gray-700 text-sm">Builds drought tolerance and winter hardiness</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-green-50 rounded-2xl p-8 mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Seasonal Fertilization Calendar</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-lg p-4">
+        <h4 class="font-semibold text-green-600 mb-2">Spring (Mar-May)</h4>
+        <p class="text-sm text-gray-700">Balanced nutrition to promote spring green-up and growth</p>
+      </div>
+      <div class="bg-white rounded-lg p-4">
+        <h4 class="font-semibold text-yellow-600 mb-2">Summer (Jun-Aug)</h4>
+        <p class="text-sm text-gray-700">Slow-release formula to maintain color without burning</p>
+      </div>
+      <div class="bg-white rounded-lg p-4">
+        <h4 class="font-semibold text-orange-600 mb-2">Fall (Sep-Nov)</h4>
+        <p class="text-sm text-gray-700">High-potassium blend for root growth and winter prep</p>
+      </div>
+      <div class="bg-white rounded-lg p-4">
+        <h4 class="font-semibold text-blue-600 mb-2">Winter (Dec-Feb)</h4>
+        <p class="text-sm text-gray-700">Dormant season planning and soil amendment</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Choose Your Fertilization Option</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-green-600 text-white p-4">
+          <h4 class="text-xl font-bold">Traditional Fertilizers</h4>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>✓ Fast-acting results</li>
+            <li>✓ Precise nutrient control</li>
+            <li>✓ Cost-effective</li>
+            <li>✓ Proven effectiveness</li>
+          </ul>
+          <a href="tel:+12089898378" class="inline-block w-full text-center bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-colors">
+            Get Quote
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-green-700 text-white p-4">
+          <h4 class="text-xl font-bold">Organic Options</h4>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>✓ Child & pet safe</li>
+            <li>✓ Improves soil health</li>
+            <li>✓ Environmentally friendly</li>
+            <li>✓ Long-lasting benefits</li>
+          </ul>
+          <a href="tel:+12089898378" class="inline-block w-full text-center bg-green-700 text-white py-2 rounded hover:bg-green-800 transition-colors">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-16">
+    <h3 class="text-lg font-bold text-gray-900 mb-2">Free Soil Testing Included</h3>
+    <p class="text-gray-700">
+      Every fertilization program starts with a professional soil test. We analyze 
+      pH levels, nutrient content, and organic matter to create a custom feeding 
+      plan specifically for your lawn. No guesswork, just science-based results.
+    </p>
+  </div>
+</ServiceLayout>
