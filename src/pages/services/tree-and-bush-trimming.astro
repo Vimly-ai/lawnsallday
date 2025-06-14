@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import LocationGrid from '../../components/LocationGrid.astro';
+
+const locations = [
+  { name: 'Nampa, Idaho', slug: 'nampa-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Nampa' },
+  { name: 'Meridian, Idaho', slug: 'meridian-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Meridian' },
+  { name: 'Boise, Idaho', slug: 'boise-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Boise' },
+  { name: 'Eagle, Idaho', slug: 'eagle-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Eagle' },
+  { name: 'Kuna, Idaho', slug: 'kuna-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Kuna' },
+  { name: 'Caldwell, Idaho', slug: 'caldwell-idaho-tree-and-bush-trimming', description: 'Professional tree and bush trimming in Caldwell' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Tree and Bush Trimming",
+  "description": "Professional tree and bush trimming services throughout the Treasure Valley, Idaho.",
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Lawns All Day",
+    "url": "https://lawnsallday.com",
+    "telephone": "+12089898378",
+    "email": "Brad@lawnsallday.com"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Nampa, Idaho"},
+    {"@type": "City", "name": "Meridian, Idaho"},
+    {"@type": "City", "name": "Boise, Idaho"},
+    {"@type": "City", "name": "Eagle, Idaho"},
+    {"@type": "City", "name": "Kuna, Idaho"},
+    {"@type": "City", "name": "Caldwell, Idaho"}
+  ]
+};
+---
+
+<Layout
+  title="Tree & Bush Trimming Services Treasure Valley | Professional Pruning | Lawns All Day"
+  description="Expert tree and bush trimming services in Nampa, Boise, Meridian, Eagle, Kuna & Caldwell. Professional pruning, safety first. Free quotes! Call (208) 989-8378."
+  schema={schema}
+  canonical="https://lawnsallday.com/services/tree-and-bush-trimming"
+>
+  <ServiceHero 
+    service="Tree and Bush Trimming"
+    isHubPage={true}
+  />
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Service Overview -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Professional Tree & Bush Trimming Services</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="text-lg text-gray-600 mb-6">
+              Lawns All Day provides expert tree and bush trimming services throughout the 
+              Treasure Valley. Our certified team uses proper techniques to promote healthy growth 
+              while enhancing the beauty of your landscape.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Proper pruning techniques</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Disease and pest inspection</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Shape and size control</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Complete debris removal</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img 
+              src="/images/services/tree-and-bush-trimming.jpg"
+              alt="Professional tree and bush trimming in Treasure Valley"
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Areas -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Tree & Bush Trimming Services by Location</h2>
+        <LocationGrid locations={locations} service="Tree and Bush Trimming" />
+      </section>
+
+      <!-- Process -->
+      <section class="bg-gray-50 rounded-lg p-8 mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Our Trimming Process</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+              1
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Assessment</h3>
+            <p class="text-gray-600 text-sm">Health and shape evaluation</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+              2
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Planning</h3>
+            <p class="text-gray-600 text-sm">Strategic trimming plan</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+              3
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Trimming</h3>
+            <p class="text-gray-600 text-sm">Expert pruning execution</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+              4
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Cleanup</h3>
+            <p class="text-gray-600 text-sm">Complete debris removal</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- CTA Section -->
+  <section class="bg-[#1f3b2c] py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">
+        Get Professional Tree & Bush Trimming Today
+      </h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Free estimates • Licensed & insured • Satisfaction guaranteed
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="tel:+12089898378" 
+          class="inline-flex items-center px-8 py-4 bg-[#c49b49] text-white font-semibold rounded-lg hover:bg-[#a7843b] transition-colors duration-300"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+          </svg>
+          Call (208) 989-8378
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#1f3b2c] transition-all duration-300"
+        >
+          Get Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
