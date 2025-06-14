@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import CTASection from '../components/CTASection.astro';
+
+const pageData = {
+  title: "Eagle ID Landscaping Services | Premium Landscape Design",
+  description: "Premium landscaping services in Eagle Idaho. Designer landscapes rare specimens luxury service. Guaranteed results. Call 208-989-8378",
+  service: "Landscaping services near me",
+  location: "Eagle, Idaho",
+  slug: "eagle-idaho-landscaping-services-near-me",
+  intro: "Eagle's luxury properties deserve exceptional landscaping services. We specialize in premium landscape design and installation, creating sophisticated outdoor spaces that enhance property value.",
+  h2_1: "Premium Landscaping Services in Eagle",
+  h2_2: "Elite Landscape Solutions for Eagle Properties"
+};
+
+const schema = {"@context":"https://schema.org","@type":"Service","name":"Landscaping Services in Eagle, Idaho","provider":{"@type":"LocalBusiness","name":"Lawns All Day","address":{"@type":"PostalAddress","addressLocality":"Eagle","addressRegion":"ID"},"telephone":"+1-208-989-8378"},"areaServed":{"@type":"City","name":"Eagle"},"description":"Premium landscaping services in Eagle, Idaho"};
+---
+
+<Layout
+  title={pageData.title}
+  description={pageData.description}
+  schema={schema}
+  canonical={`https://lawnsallday.com/${pageData.slug}`}
+>
+  <ServiceHero 
+    service={pageData.service}
+    location={pageData.location}
+    intro={pageData.intro}
+  />
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Service Details Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_1}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="prose prose-lg">
+            <p class="text-gray-600">
+              At Lawns All Day, we provide premium landscaping services 
+              throughout {pageData.location}. Our experienced design team creates sophisticated landscapes 
+              that complement Eagle's luxury properties.
+            </p>
+            <ul class="space-y-2 mt-6">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Custom Landscape Design
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Premium Plant Selection
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Professional Installation
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="/images/services/landscaping-services.jpg"
+              alt="Premium landscaping services in Eagle, Idaho"
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Areas Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_2}</h2>
+        <div class="bg-gray-50 rounded-lg p-8">
+          <p class="text-lg text-gray-600 mb-6">
+            Eagle's discerning homeowners choose our landscaping services for exceptional quality and attention to detail. 
+            We understand the unique standards of Eagle's luxury properties.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Premium Services Include</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Designer plant selections</li>
+                <li>• Custom water features</li>
+                <li>• Luxury outdoor lighting</li>
+                <li>• Premium hardscaping</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Our Commitment</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• White-glove service</li>
+                <li>• Meticulous attention to detail</li>
+                <li>• Privacy and discretion</li>
+                <li>• Guaranteed satisfaction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Services -->
+      <section class="mb-16">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">More Premium Services in {pageData.location}</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/eagle-idaho-lawn-mowing-and-edging" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Premium Lawn Care</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/eagle-idaho-tree-and-bush-trimming" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Expert Tree Care</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/eagle-idaho-sprinkler-system-installation" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Smart Irrigation</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <CTASection 
+    service={pageData.service}
+    location={pageData.location}
+  />
+</Layout>

@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import CTASection from '../components/CTASection.astro';
+
+const pageData = {
+  title: "Meridian Idaho Sprinkler System Installation | Professional Irrigation",
+  description: "Expert sprinkler system installation in Meridian ID. Smart controllers, water efficiency. Professional installation. Free quotes 208-989-8378",
+  service: "Sprinkler system installation",
+  location: "Meridian, Idaho",
+  slug: "meridian-idaho-sprinkler-system-installation",
+  intro: "Transform your Meridian property with our expert sprinkler system installation services. We design and install efficient irrigation systems that keep your lawn healthy while conserving water.",
+  h2_1: "Expert Sprinkler Installation in Meridian",
+  h2_2: "Professional Irrigation Solutions for Meridian Properties"
+};
+
+const schema = {"@context":"https://schema.org","@type":"Service","name":"Sprinkler System Installation in Meridian, Idaho","provider":{"@type":"LocalBusiness","name":"Lawns All Day","address":{"@type":"PostalAddress","addressLocality":"Meridian","addressRegion":"ID"},"telephone":"+1-208-989-8378"},"areaServed":{"@type":"City","name":"Meridian"},"description":"Expert sprinkler system installation in Meridian, Idaho"};
+---
+
+<Layout
+  title={pageData.title}
+  description={pageData.description}
+  schema={schema}
+  canonical={`https://lawnsallday.com/${pageData.slug}`}
+>
+  <ServiceHero 
+    service={pageData.service}
+    location={pageData.location}
+    intro={pageData.intro}
+  />
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Service Details Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_1}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="prose prose-lg">
+            <p class="text-gray-600">
+              At Lawns All Day, we provide professional {pageData.service.toLowerCase()} services 
+              throughout {pageData.location}. Our experienced team designs custom irrigation systems 
+              that deliver optimal coverage while minimizing water waste.
+            </p>
+            <ul class="space-y-2 mt-6">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Custom System Design
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Smart Controller Technology
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Water Conservation Focus
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="/images/services/sprinkler-system-installation.jpg"
+              alt={`Professional ${pageData.service} in ${pageData.location}`}
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Areas Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_2}</h2>
+        <div class="bg-gray-50 rounded-lg p-8">
+          <p class="text-lg text-gray-600 mb-6">
+            We proudly serve all neighborhoods and areas throughout {pageData.location}. 
+            Our irrigation experts understand the unique water needs of Treasure Valley landscapes.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Installation Features</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Zone-based watering</li>
+                <li>• Rain sensor integration</li>
+                <li>• Drip irrigation options</li>
+                <li>• Complete coverage design</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Our Guarantee</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Professional installation</li>
+                <li>• System warranty</li>
+                <li>• Training included</li>
+                <li>• Ongoing support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Services -->
+      <section class="mb-16">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">More Services in {pageData.location}</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/meridian-idaho-lawn-mowing-and-edging" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Lawn Mowing & Edging</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/meridian-idaho-fertilization-and-weed-control" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Fertilization & Weed Control</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/meridian-idaho-landscaping-services-near-me" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Landscaping Services</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <CTASection 
+    service={pageData.service}
+    location={pageData.location}
+  />
+</Layout>
