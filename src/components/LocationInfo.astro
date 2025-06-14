@@ -1,0 +1,48 @@
+---
+export interface Props {
+  location: string;
+  locationData: {
+    name: string;
+    zips: string[];
+    lat: string;
+    lng: string;
+  };
+  service: string;
+}
+
+const { location, locationData, service } = Astro.props;
+---
+
+<div class="bg-gray-50 rounded-lg p-8">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Service Areas in {location}</h3>
+      <p class="text-gray-600 mb-4">
+        We provide professional {service.toLowerCase()} services throughout {location} and surrounding areas.
+      </p>
+      <div class="space-y-2">
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-700">Serving zip codes: {locationData.zips.join(', ')}</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-700">Quick response times throughout {locationData.name}</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg p-6 shadow-md">
+      <h4 class="font-semibold text-gray-900 mb-3">Why Choose Local?</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li>• Deep knowledge of {location} climate and soil</li>
+        <li>• Established relationships with local suppliers</li>
+        <li>• Quick response for emergencies</li>
+        <li>• Investment in our community</li>
+      </ul>
+    </div>
+  </div>
+</div>

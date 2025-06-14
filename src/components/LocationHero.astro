@@ -1,0 +1,47 @@
+---
+export interface Props {
+  location: string;
+  locationData: {
+    name: string;
+    zips: string[];
+    lat: string;
+    lng: string;
+  };
+}
+
+const { location, locationData } = Astro.props;
+---
+
+<section class="bg-gradient-to-br from-green-600 to-green-700 text-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Professional Lawn Care & Landscaping in {location}
+      </h1>
+      <p class="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+        Top-rated lawn care and landscaping services serving {locationData.name} and surrounding areas. 
+        Licensed, insured, and locally owned.
+      </p>
+      <div class="bg-green-800 bg-opacity-50 rounded-lg p-4 inline-block mb-8">
+        <p class="text-green-100">Serving Zip Codes: {locationData.zips.join(', ')}</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="tel:+12089898378" 
+          class="inline-flex items-center px-8 py-4 bg-white text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors duration-300"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+          </svg>
+          Call (208) 989-8378
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center px-8 py-4 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition-colors duration-300"
+        >
+          Get Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
