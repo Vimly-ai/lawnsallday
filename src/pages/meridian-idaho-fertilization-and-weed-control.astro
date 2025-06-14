@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import CTASection from '../components/CTASection.astro';
+
+const pageData = {
+  title: "Meridian Idaho Fertilization & Weed Control | Lawn Care Experts",
+  description: "Professional fertilization and weed control in Meridian ID. Custom treatment plans organic options. Guaranteed results. Free lawn analysis 208-989-8378",
+  service: "Fertilization and weed control",
+  location: "Meridian, Idaho",
+  slug: "meridian-idaho-fertilization-and-weed-control",
+  intro: "Transform your Meridian lawn with our scientifically-formulated fertilization and weed control programs. We create customized treatment plans that deliver vibrant, healthy grass free from weeds.",
+  h2_1: "Expert Fertilization Services in Meridian",
+  h2_2: "Comprehensive Weed Control for Meridian Properties"
+};
+
+const schema = {"@context":"https://schema.org","@type":"Service","name":"Fertilization and Weed Control in Meridian, Idaho","provider":{"@type":"LocalBusiness","name":"Lawns All Day","address":{"@type":"PostalAddress","addressLocality":"Meridian","addressRegion":"ID"},"telephone":"+1-208-989-8378"},"areaServed":{"@type":"City","name":"Meridian"},"description":"Professional fertilization and weed control in Meridian, Idaho"};
+---
+
+<Layout
+  title={pageData.title}
+  description={pageData.description}
+  schema={schema}
+  canonical={`https://lawnsallday.com/${pageData.slug}`}
+>
+  <ServiceHero 
+    service={pageData.service}
+    location={pageData.location}
+    intro={pageData.intro}
+  />
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Service Details Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_1}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="prose prose-lg">
+            <p class="text-gray-600">
+              At Lawns All Day, we provide professional {pageData.service.toLowerCase()} services 
+              throughout {pageData.location}. Our experienced team uses commercial-grade equipment 
+              and proven techniques to deliver exceptional results for residential and commercial properties.
+            </p>
+            <ul class="space-y-2 mt-6">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Licensed & Insured Professionals
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Free Estimates & Competitive Pricing
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Serving All {pageData.location} Neighborhoods
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="/images/services/fertilization-and-weed-control.jpg"
+              alt={`Professional ${pageData.service} services in ${pageData.location}`}
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Areas Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{pageData.h2_2}</h2>
+        <div class="bg-gray-50 rounded-lg p-8">
+          <p class="text-lg text-gray-600 mb-6">
+            We proudly serve all neighborhoods and areas throughout {pageData.location}. 
+            Our local team understands the unique climate and conditions of the Treasure Valley, 
+            ensuring optimal results for every property we service.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Why Choose Local?</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Quick response times</li>
+                <li>• Knowledge of local conditions</li>
+                <li>• Investment in our community</li>
+                <li>• Personalized service</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">Service Commitment</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• 100% Satisfaction Guarantee</li>
+                <li>• Transparent Pricing</li>
+                <li>• Reliable Scheduling</li>
+                <li>• Professional Results</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Services -->
+      <section class="mb-16">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">More Services in {pageData.location}</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/meridian-idaho-lawn-mowing-and-edging" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Lawn Mowing & Edging</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/meridian-idaho-landscaping-services-near-me" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Landscaping Services</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+          <a href="/meridian-idaho-tree-and-bush-trimming" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-semibold text-gray-900 mb-2">Tree & Bush Trimming</h4>
+            <span class="text-sm text-green-600">Learn More →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <CTASection 
+    service={pageData.service}
+    location={pageData.location}
+  />
+</Layout>
