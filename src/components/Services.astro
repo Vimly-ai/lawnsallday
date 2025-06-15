@@ -1,0 +1,72 @@
+---
+const services = [
+  {
+    title: 'Lawn Mowing & Edging',
+    description: 'Regular maintenance for a perfectly manicured lawn',
+    icon: '🌱',
+    link: '/services/lawn-mowing-and-edging'
+  },
+  {
+    title: 'Fertilization & Weed Control',
+    description: 'Keep your lawn healthy and weed-free year-round',
+    icon: '🌿',
+    link: '/services/fertilization-and-weed-control'
+  },
+  {
+    title: 'Landscaping Design',
+    description: 'Transform your outdoor space with professional design',
+    icon: '🏡',
+    link: '/services/landscaping'
+  },
+  {
+    title: 'Sprinkler Systems',
+    description: 'Installation, repair, and maintenance services',
+    icon: '💧',
+    link: '/services/sprinkler-repair-and-maintenance'
+  },
+  {
+    title: 'Tree & Bush Trimming',
+    description: 'Expert pruning for healthy, beautiful plants',
+    icon: '🌳',
+    link: '/services/tree-and-bush-trimming'
+  },
+  {
+    title: 'Overseeding & Repair',
+    description: 'Restore bare spots and thicken your lawn',
+    icon: '🌾',
+    link: '/services/overseeding-and-lawn-repair'
+  }
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Our Professional Services
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Comprehensive lawn care and landscaping solutions tailored to your needs
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+          <p class="text-gray-600 mb-4">{service.description}</p>
+          <a 
+            href={service.link} 
+            class="text-lawn-green-600 font-semibold hover:text-lawn-green-700 inline-flex items-center"
+          >
+            Learn More 
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

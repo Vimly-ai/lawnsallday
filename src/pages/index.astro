@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Locations from '../components/Locations.astro';
+import CTA from '../components/CTA.astro';
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": "LandscapingBusiness",
   "name": "Lawns All Day",
-  "description": "Professional lawn care and landscaping company serving Nampa, Boise, Meridian, Eagle, Kuna, and Caldwell, Idaho. Specializing in property management, rental homes, and builder services.",
+  "description": "Professional lawn care and landscaping services in the Treasure Valley",
   "url": "https://lawnsallday.com",
-  "telephone": "+12089898378",
+  "telephone": "12089898378",
   "email": "Brad@lawnsallday.com",
   "address": {
     "@type": "PostalAddress",
@@ -18,343 +21,24 @@ const schema = {
     "postalCode": "83687",
     "addressCountry": "US"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "43.5407",
-    "longitude": "-116.5594"
-  },
   "areaServed": [
-    {"@type": "City", "name": "Nampa", "addressRegion": "ID"},
-    {"@type": "City", "name": "Boise", "addressRegion": "ID"},
-    {"@type": "City", "name": "Meridian", "addressRegion": "ID"},
-    {"@type": "City", "name": "Eagle", "addressRegion": "ID"},
-    {"@type": "City", "name": "Kuna", "addressRegion": "ID"},
-    {"@type": "City", "name": "Caldwell", "addressRegion": "ID"}
+    "Nampa", "Meridian", "Boise", "Eagle", "Kuna", "Caldwell"
   ],
   "serviceType": [
-    "Lawn Care", "Landscaping", "Lawn Mowing", "Sprinkler Repair", 
-    "Mulch Delivery", "Tree Trimming", "Property Maintenance"
-  ],
-  "priceRange": "$$",
-  "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127"
-  }
+    "Lawn Mowing", "Fertilization", "Weed Control", "Landscaping", 
+    "Sprinkler Repair", "Tree Trimming", "Overseeding"
+  ]
 };
 ---
 
 <BaseLayout
-  title="Lawn Care Nampa Idaho | Professional Landscaping Treasure Valley | Lawns All Day"
-  description="#1 rated lawn care and landscaping company in Nampa, Boise, Meridian, Eagle, Kuna & Caldwell. Professional services for property managers, rental companies & builders. Get your free quote today!"
-  keywords="lawn care Nampa Idaho, landscaping Treasure Valley, lawn service Boise, professional lawn care Idaho, landscaping company Meridian, lawn mowing Eagle Idaho, sprinkler repair Kuna, mulch delivery Caldwell"
+  title="Professional Lawn Care & Landscaping Services in Treasure Valley | Lawns All Day"
+  description="Expert lawn care, landscaping, and maintenance services in Nampa, Meridian, Boise, and surrounding areas. Free quotes! Call (208) 989-8378."
+  keywords="lawn care, landscaping, lawn mowing, Treasure Valley, Nampa, Meridian, Boise, Idaho"
   schema={schema}
 >
-  <!-- Hero Section -->
   <Hero />
-
-  <!-- Services Section -->
-  <section class="section-padding bg-gray-50">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Complete Lawn Care & Landscaping Solutions
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          From weekly lawn maintenance to full landscape installations, we provide comprehensive services 
-          for residential properties, rental homes, and new construction throughout the Treasure Valley.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Lawn Mowing & Edging -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Lawn Mowing & Edging</h3>
-          <p class="text-gray-600 mb-6">
-            Professional lawn mowing with precise edging for a perfectly manicured look. Weekly, bi-weekly, or monthly service available.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Sharp, clean cuts</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Crisp edge lines</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Grass clipping cleanup</li>
-          </ul>
-          <a href="/services/lawn-mowing" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <!-- Full Landscaping -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Full Landscaping</h3>
-          <p class="text-gray-600 mb-6">
-            Complete landscape design and installation including plants, trees, shrubs, and hardscaping elements.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Custom design</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Plant installation</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Hardscape features</li>
-          </ul>
-          <a href="/services/landscaping" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <!-- Sprinkler Repair -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Sprinkler Repair & Installation</h3>
-          <p class="text-gray-600 mb-6">
-            Expert sprinkler system repair, maintenance, and new installations to keep your lawn properly watered.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> System diagnostics</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Head replacement</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> New installations</li>
-          </ul>
-          <a href="/services/sprinkler-repair" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <!-- Fertilization & Weed Control -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Fertilization & Weed Control</h3>
-          <p class="text-gray-600 mb-6">
-            Professional lawn fertilization and targeted weed control to maintain a healthy, lush green lawn year-round.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Seasonal fertilization</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Weed prevention</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Soil analysis</li>
-          </ul>
-          <a href="/services/fertilization" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <!-- Mulch & Bark Delivery -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Mulch & Bark Delivery</h3>
-          <p class="text-gray-600 mb-6">
-            Quality mulch and bark delivery with professional spreading services to enhance your landscape beds.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Premium materials</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Delivery & spreading</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Bulk pricing</li>
-          </ul>
-          <a href="/services/mulch-delivery" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <!-- Tree & Bush Trimming -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Tree & Bush Trimming</h3>
-          <p class="text-gray-600 mb-6">
-            Professional tree and shrub trimming to maintain plant health, safety, and aesthetic appeal.
-          </p>
-          <ul class="text-gray-600 space-y-2 mb-6">
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Proper pruning techniques</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Debris cleanup</li>
-            <li class="flex items-center"><span class="text-primary-600 mr-2">✓</span> Seasonal timing</li>
-          </ul>
-          <a href="/services/tree-trimming" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="/services" class="btn-primary text-lg px-8 py-4">
-          View All Services
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Areas Section -->
-  <section class="section-padding bg-white">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Serving the Entire Treasure Valley
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Professional lawn care and landscaping services throughout Idaho's Treasure Valley region. 
-          We're proud to serve homeowners, property managers, and builders in these communities.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Nampa -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Nampa, Idaho</h3>
-          <p class="text-primary-700 mb-4">Our home base serving zip codes:</p>
-          <div class="text-primary-600 font-semibold mb-6">83651, 83686, 83687</div>
-          <a href="/locations/nampa-idaho" class="btn-primary">
-            Nampa Lawn Care Services
-          </a>
-        </div>
-
-        <!-- Boise -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Boise, Idaho</h3>
-          <p class="text-primary-700 mb-4">Capital city coverage including:</p>
-          <div class="text-primary-600 font-semibold mb-6">83702, 83703, 83704, 83705, 83706, 83709, 83712, 83713, 83714, 83716</div>
-          <a href="/locations/boise-idaho" class="btn-primary">
-            Boise Landscaping Services
-          </a>
-        </div>
-
-        <!-- Meridian -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Meridian, Idaho</h3>
-          <p class="text-primary-700 mb-4">Fast-growing community serving:</p>
-          <div class="text-primary-600 font-semibold mb-6">83642, 83646</div>
-          <a href="/locations/meridian-idaho" class="btn-primary">
-            Meridian Lawn Care Services
-          </a>
-        </div>
-
-        <!-- Eagle -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Eagle, Idaho</h3>
-          <p class="text-primary-700 mb-4">Premium community coverage:</p>
-          <div class="text-primary-600 font-semibold mb-6">83616, 83646</div>
-          <a href="/locations/eagle-idaho" class="btn-primary">
-            Eagle Landscaping Services
-          </a>
-        </div>
-
-        <!-- Kuna -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Kuna, Idaho</h3>
-          <p class="text-primary-700 mb-4">Rural community serving:</p>
-          <div class="text-primary-600 font-semibold mb-6">83634</div>
-          <a href="/locations/kuna-idaho" class="btn-primary">
-            Kuna Lawn Care Services
-          </a>
-        </div>
-
-        <!-- Caldwell -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-primary-800 mb-4">Caldwell, Idaho</h3>
-          <p class="text-primary-700 mb-4">Historic city coverage:</p>
-          <div class="text-primary-600 font-semibold mb-6">83605, 83607</div>
-          <a href="/locations/caldwell-idaho" class="btn-primary">
-            Caldwell Landscaping Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us Section -->
-  <section class="section-padding bg-gray-900 text-white">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Why Choose Lawns All Day?
-        </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          We're not just another lawn care company. We're your local Treasure Valley partners, 
-          specializing in property management, rental homes, and builder services.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Local Expertise</h3>
-          <p class="text-gray-300">
-            Nampa-based with deep knowledge of Treasure Valley climate, soil, and growing conditions.
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Property Management Specialists</h3>
-          <p class="text-gray-300">
-            Specialized services for rental properties, property managers, and home builders with unsold homes.
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Reliable & Prompt</h3>
-          <p class="text-gray-300">
-            Consistent service schedules with same-day quotes and prompt communication for all your needs.
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-4">100% Satisfaction Guaranteed</h3>
-          <p class="text-gray-300">
-            Licensed, insured, and committed to delivering exceptional results on every project.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section-padding bg-primary-600 text-white">
-    <div class="container-custom text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">
-        Ready for a Beautiful Lawn?
-      </h2>
-      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-        Join hundreds of satisfied Treasure Valley property owners who trust Lawns All Day 
-        for reliable, professional lawn care and landscaping services.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/quote" class="btn-secondary text-lg px-8 py-4 font-bold">
-          Get Your Free Quote Today
-        </a>
-        <a href="tel:+12089898378" class="flex items-center justify-center space-x-2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-          </svg>
-          <span>Call (208) 989-8378</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <Services />
+  <Locations />
+  <CTA />
 </BaseLayout>

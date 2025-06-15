@@ -1,0 +1,49 @@
+---
+const locations = [
+  { name: 'Nampa', population: '100,000+', link: '/locations/nampa' },
+  { name: 'Meridian', population: '120,000+', link: '/locations/meridian' },
+  { name: 'Boise', population: '235,000+', link: '/locations/boise' },
+  { name: 'Eagle', population: '30,000+', link: '/locations/eagle' },
+  { name: 'Kuna', population: '24,000+', link: '/locations/kuna' },
+  { name: 'Caldwell', population: '60,000+', link: '/locations/caldwell' }
+];
+---
+
+<section class="py-16 bg-lawn-green-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Serving the Entire Treasure Valley
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Professional lawn care services available throughout Idaho's premier communities
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      {locations.map((location) => (
+        <a 
+          href={location.link}
+          class="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-shadow group"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 group-hover:text-lawn-green-600 transition-colors">
+            {location.name}
+          </h3>
+          <p class="text-gray-600 text-sm mt-1">Pop. {location.population}</p>
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">
+        Don't see your area? We serve all of Canyon and Ada counties!
+      </p>
+      <a 
+        href="/contact" 
+        class="text-lawn-green-600 font-semibold hover:text-lawn-green-700"
+      >
+        Contact us to confirm service availability
+      </a>
+    </div>
+  </div>
+</section>
