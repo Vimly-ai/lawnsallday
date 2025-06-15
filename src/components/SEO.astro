@@ -2,104 +2,95 @@
 export interface Props {
   title: string;
   description: string;
-  canonical?: string;
-  ogImage?: string;
-  ogType?: string;
-  twitterCard?: string;
-  schema?: any;
-  noindex?: boolean;
   keywords?: string;
-  city?: string;
-  service?: string;
+  image?: string;
+  canonical?: string;
+  schema?: any;
 }
 
-const {
-  title,
-  description,
-  canonical,
-  ogImage = '/images/lawns-all-day-og.jpg',
-  ogType = 'website',
-  twitterCard = 'summary_large_image',
-  schema,
-  noindex = false,
-  keywords,
-  city,
-  service
+const { 
+  title, 
+  description, 
+  keywords = 'lawn care, landscaping, lawn mowing, Idaho, Treasure Valley', 
+  image = '/images/lawn-care-hero.jpg',
+  canonical = Astro.url.href,
+  schema
 } = Astro.props;
 
-const canonicalURL = canonical || Astro.url.href;
-const siteName = "Lawns All Day";
-const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const siteTitle = title.includes('Lawns All Day') ? title : `${title} | Lawns All Day`;
 ---
 
-<!-- Primary Meta Tags -->
-<title>{fullTitle}</title>
-<meta name="title" content={fullTitle} />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{siteTitle}</title>
 <meta name="description" content={description} />
-{keywords && <meta name="keywords" content={keywords} />}
-<link rel="canonical" href={canonicalURL} />
+<meta name="keywords" content={keywords} />
+<link rel="canonical" href={canonical} />
 
-<!-- Robots -->
-{noindex ? (
-  <meta name="robots" content="noindex, nofollow" />
-) : (
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-)}
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content={ogType} />
-<meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={fullTitle} />
+<!-- Open Graph -->
+<meta property="og:title" content={siteTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
-<meta property="og:site_name" content={siteName} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content="website" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content={twitterCard} />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={fullTitle} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImage} />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
 
-<!-- Additional SEO Meta Tags -->
-<meta name="author" content="Lawns All Day" />
-<meta name="copyright" content="Lawns All Day" />
-<meta name="language" content="English" />
-<meta name="revisit-after" content="7 days" />
-<meta name="distribution" content="global" />
-<meta name="rating" content="general" />
-
-<!-- Geo Tags for Local SEO -->
-{city && (
-  <>
-    <meta name="geo.region" content="US-ID" />
-    <meta name="geo.placename" content={`${city}, Idaho`} />
-    <meta name="geo.position" content="43.5407;-116.5594" />
-    <meta name="ICBM" content="43.5407, -116.5594" />
-  </>
-)}
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 <!-- Schema.org JSON-LD -->
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 )}
 
-<!-- Preconnect to external domains -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-<!-- DNS Prefetch -->
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-
-<!-- Viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="format-detection" content="telephone=no" />
+<!-- Local Business Schema (default) -->
+{!schema && (
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Lawns All Day",
+      "image": "https://lawnsallday.com/images/logo.png",
+      "@id": "https://lawnsallday.com",
+      "url": "https://lawnsallday.com",
+      "telephone": "12089898378",
+      "email": "Brad@lawnsallday.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6424 E Sherryanna Ln",
+        "addressLocality": "Nampa",
+        "addressRegion": "ID",
+        "postalCode": "83687",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5407,
+        "longitude": -116.5635
+      },
+      "sameAs": [
+        "https://www.facebook.com/lawnsallday",
+        "https://www.instagram.com/lawnsallday"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ]
+    }
+  </script>
+)}
