@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://lawnsallday.com/sitemap.xml
-
-# Crawl-delay for bots that support it
-Crawl-delay: 1
-
-# Block bad bots
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Crawl-delay: 10

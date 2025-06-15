@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Locations from '../../components/Locations.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Service Areas - Lawn Care in Treasure Valley | Lawns All Day"
+  description="We provide professional lawn care and landscaping services throughout the Treasure Valley including Nampa, Meridian, Boise, Eagle, Kuna, and Caldwell."
+>
+  <section class="py-16 bg-lawn-green-50">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-8">
+        Our Service Areas
+      </h1>
+      <p class="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
+        Lawns All Day proudly serves residential and commercial properties throughout 
+        the Treasure Valley. Find professional lawn care services in your area.
+      </p>
+    </div>
+  </section>
+  
+  <Locations />
+  <CTA />
+</BaseLayout>
