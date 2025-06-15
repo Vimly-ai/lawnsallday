@@ -1,0 +1,69 @@
+---
+import SEO from '../components/SEO.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import CTA from '../components/CTA.astro';
+import Locations from '../components/Locations.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Lawn Mowing & Edging',
+  description: 'Professional lawn mowing and edging services in the Treasure Valley',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Lawn's All Day',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'ID',
+      addressLocality: 'Nampa'
+    }
+  }
+};
+---
+
+<SEO
+  title="Lawn Mowing & Edging Services | Lawn's All Day"
+  description="Professional lawn mowing and edging services in Nampa, Meridian, Boise, and surrounding areas. Weekly maintenance for a perfectly manicured lawn."
+  keywords="lawn mowing, lawn edging, weekly lawn maintenance, grass cutting"
+  schema={schema}
+/>
+
+<Hero
+  title="Perfectly Manicured Lawns"
+  description="Weekly lawn mowing and edging services to keep your yard looking its best all year round"
+/>
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-foreground mb-8">Our Lawn Mowing & Edging Services</h2>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold text-foreground mb-4">Regular Maintenance</h3>
+          <p class="text-muted-foreground">
+            Weekly or bi-weekly mowing to maintain optimal grass height and health
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-foreground mb-4">Precision Edging</h3>
+          <p class="text-muted-foreground">
+            Clean, precise edging around flower beds, sidewalks, and driveways
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-foreground mb-4">Seasonal Adjustments</h3>
+          <p class="text-muted-foreground">
+            Adjustments to mowing frequency and height based on seasonal growth patterns
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Services />
+
+<Locations />
+
+<CTA />

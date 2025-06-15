@@ -1,4 +1,7 @@
 ---
+import Card from '../components/ui/card';
+import Button from '../components/ui/button';
+
 const locations = [
   { name: 'Nampa', population: '100,000+', link: '/locations/nampa' },
   { name: 'Meridian', population: '120,000+', link: '/locations/meridian' },
@@ -9,41 +12,35 @@ const locations = [
 ];
 ---
 
-<section class="py-16 bg-lawn-green-50">
+<section class="py-16 bg-background/50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
         Serving the Entire Treasure Valley
       </h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
         Professional lawn care services available throughout Idaho's premier communities
       </p>
     </div>
     
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       {locations.map((location) => (
-        <a 
-          href={location.link}
-          class="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-shadow group"
-        >
-          <h3 class="text-xl font-semibold text-gray-900 group-hover:text-lawn-green-600 transition-colors">
+        <Card class="p-6 text-center hover:shadow-lg transition-shadow group">
+          <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
             {location.name}
           </h3>
-          <p class="text-gray-600 text-sm mt-1">Pop. {location.population}</p>
-        </a>
+          <p class="text-muted-foreground text-sm mt-1">Pop. {location.population}</p>
+        </Card>
       ))}
     </div>
     
     <div class="mt-12 text-center">
-      <p class="text-gray-600 mb-4">
+      <p class="text-muted-foreground mb-4">
         Don't see your area? We serve all of Canyon and Ada counties!
       </p>
-      <a 
-        href="/contact" 
-        class="text-lawn-green-600 font-semibold hover:text-lawn-green-700"
-      >
-        Contact us to confirm service availability
-      </a>
+      <Button variant="outline" href="/contact" class="w-full justify-center">
+        Contact Us
+      </Button>
     </div>
   </div>
 </section>

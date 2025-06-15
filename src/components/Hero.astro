@@ -1,39 +1,33 @@
 ---
-// Hero component for the home page
+import Button from '../ui/button.astro';
 ---
 
-<section class="relative bg-lawn-green-50 overflow-hidden">
+<section class="relative bg-background overflow-hidden">
   <div class="container mx-auto px-4 py-16 md:py-24">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Professional Lawn Care in the <span class="text-lawn-green-600">Treasure Valley</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          Professional Lawn Care in the <span class="text-primary">Treasure Valley</span>
         </h1>
-        <p class="text-xl text-gray-700 mb-8">
+        <p class="text-xl text-muted-foreground mb-8">
           Transform your outdoor space with expert lawn care and landscaping services. 
           Serving Nampa, Meridian, Boise, and surrounding areas since 2015.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a 
-            href="tel:12089898378" 
-            class="bg-lawn-green-600 text-white px-8 py-3 rounded-full font-semibold text-center hover:bg-lawn-green-700 transition-colors shadow-lg"
-          >
+          <Button variant="default" href="tel:12089898378">
             Get Free Quote
-          </a>
-          <a 
-            href="/services" 
-            class="border-2 border-lawn-green-600 text-lawn-green-600 px-8 py-3 rounded-full font-semibold text-center hover:bg-lawn-green-50 transition-colors"
-          >
+          </Button>
+          <Button variant="outline" href="/services">
             View Services
-          </a>
+          </Button>
         </div>
         <div class="mt-8 flex items-center space-x-6">
           <div class="flex -space-x-2">
-            <div class="w-10 h-10 bg-gray-300 rounded-full border-2 border-white"></div>
-            <div class="w-10 h-10 bg-gray-400 rounded-full border-2 border-white"></div>
-            <div class="w-10 h-10 bg-gray-500 rounded-full border-2 border-white"></div>
+            <div class="w-10 h-10 bg-muted rounded-full border-2 border-border"></div>
+            <div class="w-10 h-10 bg-muted rounded-full border-2 border-border"></div>
+            <div class="w-10 h-10 bg-muted rounded-full border-2 border-border"></div>
           </div>
-          <p class="text-gray-600">
+          <p class="text-muted-foreground">
             <span class="font-semibold">500+</span> Happy Customers
           </p>
         </div>
@@ -42,12 +36,12 @@
         <img 
           src="/images/lawn-care-hero.jpg" 
           alt="Professional lawn care service in action"
-          class="rounded-lg shadow-2xl"
+          class="rounded-lg shadow-lg"
           width="600"
           height="400"
           loading="eager"
         />
-        <div class="absolute -bottom-6 -right-6 bg-lawn-green-600 text-white p-6 rounded-lg shadow-xl">
+        <div class="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
           <p class="text-3xl font-bold">10+</p>
           <p class="text-sm">Years Experience</p>
         </div>

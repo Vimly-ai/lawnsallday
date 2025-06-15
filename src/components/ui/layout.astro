@@ -1,30 +1,20 @@
 ---
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ThemeToggle from '../components/ui/theme-toggle.astro';
-
-export interface Props {
+interface Props {
   title: string;
-  description: string;
-  keywords: string;
-  schema: any;
   children: any;
 }
 
-const { title, description, keywords, schema, children } = Astro.props;
+const { title, children } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
+    <meta name="description" content="Lawn care services" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="application/ld+json">{JSON.stringify(schema)}</script>
     <link rel="stylesheet" href="/styles/theme.css" />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
@@ -43,14 +33,12 @@ const { title, description, keywords, schema, children } = Astro.props;
         </div>
       </div>
     </nav>
-
     <main class="container mx-auto py-12">
       {children}
     </main>
-
     <footer class="border-t">
       <div class="container flex flex-col items-center justify-between py-8 md:flex-row">
-        <p class="text-sm text-muted-foreground"> {new Date().getFullYear()} Lawn's All Day. All rights reserved.</p>
+        <p class="text-sm text-muted-foreground">© {new Date().getFullYear()} Lawn's All Day. All rights reserved.</p>
       </div>
     </footer>
   </body>
