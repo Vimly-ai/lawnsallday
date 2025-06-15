@@ -1,85 +1,64 @@
 ---
 export interface Props {
   location: string;
-  description: string;
-  highlights?: string[];
-  mapUrl?: string;
 }
 
-const { location, description, highlights = [], mapUrl } = Astro.props;
+const { location } = Astro.props;
+
+const locationInfo = {
+  'Nampa': {
+    description: 'As Idaho\'s third-largest city, Nampa offers a perfect blend of suburban comfort and agricultural heritage.',
+    neighborhoods: ['Downtown Nampa', 'Lake Lowell', 'Sunny Ridge', 'Columbia Village']
+  },
+  'Meridian': {
+    description: 'Meridian is one of the fastest-growing cities in Idaho, known for its family-friendly neighborhoods and parks.',
+    neighborhoods: ['The Village', 'Lochsa Falls', 'Paramount', 'Century Farm']
+  },
+  'Boise': {
+    description: 'Idaho\'s capital city combines urban amenities with easy access to outdoor recreation.',
+    neighborhoods: ['North End', 'East End', 'Southeast Boise', 'Bench']
+  },
+  'Eagle': {
+    description: 'Eagle maintains its small-town charm while offering upscale residential communities.',
+    neighborhoods: ['Eagle Hills', 'Legacy', 'Floating Feather', 'The Ridge']
+  },
+  'Kuna': {
+    description: 'Kuna preserves its agricultural roots while welcoming new residential development.',
+    neighborhoods: ['Downtown Kuna', 'Crimson Point', 'Patagonia', 'Sagewind']
+  },
+  'Caldwell': {
+    description: 'Caldwell offers affordable living with a strong sense of community.',
+    neighborhoods: ['Downtown Caldwell', 'Skyway', 'Autumn Wind', 'College Park']
+  }
+};
+
+const cityName = location.split(',')[0].trim();
+const info = locationInfo[cityName] || { description: '', neighborhoods: [] };
 ---
 
-<section class="py-16 bg-white">
+<section class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-          Serving {location} with Pride
-        </h2>
-        
-        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-          {description}
-        </p>
-        
-        {highlights.length > 0 && (
-          <div class="space-y-3">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">
-              Local Service Highlights:
-            </h3>
-            <ul class="space-y-2">
-              {highlights.map((highlight) => (
-                <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  <span class="text-gray-700">{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a 
-            href="/quote" 
-            class="bg-green-600 text-white hover:bg-green-700 font-bold py-3 px-6 rounded-lg transition-colors duration-200"
-          >
-            Get Local Quote
-          </a>
-          <a 
-            href="/services" 
-            class="bg-gray-200 text-gray-800 hover:bg-gray-300 font-bold py-3 px-6 rounded-lg transition-colors duration-200"
-          >
-            View All Services
-          </a>
-        </div>
-      </div>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+        About {cityName}
+      </h2>
+      <p class="text-lg text-gray-700 mb-8">
+        {info.description} Our lawn care services are tailored to meet the unique 
+        needs of {cityName} properties, considering local climate conditions and HOA requirements.
+      </p>
       
-      {mapUrl ? (
-        <div class="rounded-lg overflow-hidden shadow-lg">
-          <iframe 
-            src={mapUrl}
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title={`Map of ${location} service area`}
-          ></iframe>
-        </div>
-      ) : (
-        <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-lg p-12 text-center">
-          <svg class="w-24 h-24 text-green-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-          <h3 class="text-2xl font-bold text-green-800 mb-2">
-            Proudly Serving {location}
+      {info.neighborhoods.length > 0 && (
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Neighborhoods We Serve
           </h3>
-          <p class="text-green-700">
-            Professional lawn care throughout the area
-          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {info.neighborhoods.map((neighborhood) => (
+              <div class="bg-white p-4 rounded text-center">
+                <span class="text-gray-700">{neighborhood}</span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

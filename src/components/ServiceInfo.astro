@@ -1,0 +1,42 @@
+---
+export interface Props {
+  location: string;
+}
+
+const { location } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+        Professional Lawn Care in {location}
+      </h2>
+      <p class="text-lg text-gray-700 mb-8">
+        Lawns All Day provides comprehensive lawn care and landscaping services 
+        throughout {location}. Our experienced team is committed to maintaining 
+        beautiful, healthy lawns for both residential and commercial properties.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-lawn-green-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✓ Licensed and insured professionals</li>
+            <li>✓ Eco-friendly products and practices</li>
+            <li>✓ Customized service plans</li>
+            <li>✓ Competitive pricing</li>
+            <li>✓ Satisfaction guaranteed</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Service Areas</h3>
+          <p class="text-gray-700">
+            We proudly serve all neighborhoods in {location}, including residential 
+            communities, commercial properties, and HOA-managed areas. No property 
+            is too big or too small for our dedicated team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

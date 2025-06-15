@@ -7,31 +7,27 @@ export interface Props {
   title: string;
   description: string;
   canonical?: string;
-  ogImage?: string;
+  image?: string;
+  keywords?: string;
   schema?: any;
 }
 
-const { title, description, canonical, ogImage, schema } = Astro.props;
+const { title, description, canonical, image, keywords, schema } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <SEO 
+    <SEO
       title={title}
       description={description}
       canonical={canonical}
-      ogImage={ogImage}
+      image={image}
+      keywords={keywords}
+      schema={schema}
     />
-    {schema && (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    )}
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    </style>
   </head>
-  <body class="font-sans text-gray-900">
+  <body>
     <Header />
     <main>
       <slot />
@@ -39,3 +35,7 @@ const { title, description, canonical, ogImage, schema } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
