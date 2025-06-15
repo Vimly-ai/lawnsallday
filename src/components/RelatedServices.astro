@@ -1,26 +1,66 @@
 ---
-export interface Props {
-  links: Array<{
-    url: string;
-    text: string;
-    type: string;
-  }>;
+export interface Service {
+  name: string;
+  slug: string;
+  description: string;
 }
 
-const { links } = Astro.props;
+export interface Props {
+  services: Service[];
+  currentService?: string;
+  location?: string;
+}
+
+const { services, currentService, location } = Astro.props;
+
+// Filter out current service
+const relatedServices = services.filter(s => s.slug !== currentService);
 ---
 
-<section class="mb-16">
-  <h3 class="text-2xl font-bold text-gray-900 mb-6">Related Services & Areas</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {links.map((link) => (
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+      Other Services We Offer {location ? `in ${location}` : ''}
+    </h2>
+    
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      Complete lawn care and landscaping solutions for your property
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {relatedServices.slice(0, 6).map((service) => (
+        <a 
+          href={location ? `/${location.toLowerCase().replace(' ', '-').replace(',', '')}/${service.slug}` : `/services/${service.slug}`}
+          class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300 p-6 group"
+        >
+          <h3 class="text-xl font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
+            {service.name}
+          </h3>
+          
+          <p class="text-gray-600 mb-4">
+            {service.description}
+          </p>
+          
+          <span class="text-green-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+            Learn More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
       <a 
-        href={link.url}
-        class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+        href="/services" 
+        class="inline-flex items-center gap-2 bg-green-600 text-white hover:bg-green-700 font-bold py-3 px-6 rounded-lg transition-colors duration-200"
       >
-        <h4 class="font-semibold text-gray-900 mb-2">{link.text}</h4>
-        <span class="text-sm text-green-600">Learn More →</span>
+        View All Services
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
       </a>
-    ))}
+    </div>
   </div>
 </section>
