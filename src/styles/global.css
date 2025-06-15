@@ -9,15 +9,19 @@
   }
 }
 
-/* Smooth scroll behavior */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #111827; /* Tailwind gray-900 */
 }
 
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid theme('colors.lawn-green.500');
+  outline: 2px solid theme('colors.green.500'); /* Fixed */
   outline-offset: 2px;
+  transition: outline-color 0.2s;
 }
 
 /* Custom scrollbar */
@@ -30,10 +34,34 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.lawn-green.500');
+  background: theme('colors.green.500'); /* Fixed */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.lawn-green.600');
+  background: theme('colors.green.600'); /* Fixed */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Links */
+a {
+  color: theme('colors.green.600');
+  text-decoration: underline;
+}
+
+a:hover {
+  color: theme('colors.green.700');
+}
+
+/* Smooth transitions */
+button,
+a,
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
 }
