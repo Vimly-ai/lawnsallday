@@ -1,0 +1,58 @@
+---
+export interface Service {
+  name: string;
+  slug: string;
+  description: string;
+  icon?: string;
+}
+
+export interface Props {
+  services: Service[];
+  location: string;
+}
+
+const { services, location } = Astro.props;
+const locationSlug = location.toLowerCase().replace(' ', '-').replace(',', '');
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+      Our Services in {location}
+    </h2>
+    
+    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      Complete lawn care and landscaping solutions tailored to {location}'s unique climate and soil conditions
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <a 
+          href={`/${locationSlug}/${service.slug}`}
+          class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group border border-gray-200 hover:border-green-500"
+        >
+          {service.icon && (
+            <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+              <span class="text-2xl">{service.icon}</span>
+            </div>
+          )}
+          
+          <h3 class="text-xl font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
+            {service.name}
+          </h3>
+          
+          <p class="text-gray-600 mb-4">
+            {service.description}
+          </p>
+          
+          <span class="text-green-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+            Learn More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
