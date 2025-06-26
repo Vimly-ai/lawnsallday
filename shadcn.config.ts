@@ -1,5 +1,3 @@
-import type * as components from "./src/components/ui"
-
 export const config = {
   theme: {
     default: "default",
