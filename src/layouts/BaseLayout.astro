@@ -9,10 +9,9 @@ export interface Props {
   description: string;
   keywords: string;
   schema: any;
-  children: any;
 }
 
-const { title, description, keywords, schema, children } = Astro.props;
+const { title, description, keywords, schema } = Astro.props;
 ---
 
 <!doctype html>
@@ -45,7 +44,7 @@ const { title, description, keywords, schema, children } = Astro.props;
     </nav>
 
     <main class="container mx-auto py-12">
-      {children}
+      <slot />
     </main>
 
     <footer class="border-t">
