@@ -1,5 +1,4 @@
 ---
-import Button from '../ui/button.astro';
 ---
 
 <section class="relative bg-background overflow-hidden">
@@ -14,12 +13,12 @@ import Button from '../ui/button.astro';
           Serving Nampa, Meridian, Boise, and surrounding areas since 2015.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <Button variant="default" href="tel:12089898378">
+          <a href="tel:12089898378" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             Get Free Quote
-          </Button>
-          <Button variant="outline" href="/services">
+          </a>
+          <a href="/services" class="inline-flex items-center justify-center px-6 py-3 border border-input bg-background text-foreground font-semibold rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors">
             View Services
-          </Button>
+          </a>
         </div>
         <div class="mt-8 flex items-center space-x-6">
           <div class="flex -space-x-2">

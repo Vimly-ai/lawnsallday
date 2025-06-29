@@ -1,6 +1,4 @@
 ---
-import Button from '../components/ui/button';
-
 // Call to action component
 ---
 
@@ -13,16 +11,12 @@ import Button from '../components/ui/button';
       Get your free quote today and discover why homeowners throughout the Treasure Valley trust Lawns All Day
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button variant="outline" size="lg" class="w-full sm:w-auto justify-center">
-        <a href="tel:12089898378">
-          Call (208) 989-8378
-        </a>
-      </Button>
-      <Button size="lg" class="w-full sm:w-auto justify-center">
-        <a href="/contact">
-          Get Online Quote
-        </a>
-      </Button>
+      <a href="tel:12089898378" class="inline-flex items-center justify-center px-8 py-4 border border-primary-foreground bg-transparent text-primary-foreground font-semibold rounded-lg hover:bg-primary-foreground hover:text-primary transition-colors">
+        Call (208) 989-8378
+      </a>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary-foreground text-primary font-semibold rounded-lg hover:bg-primary-foreground/90 transition-colors">
+        Get Online Quote
+      </a>
     </div>
     <p class="text-muted-foreground mt-6">
       Free estimates • Licensed & Insured • Satisfaction Guaranteed

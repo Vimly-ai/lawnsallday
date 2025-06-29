@@ -1,7 +1,4 @@
 ---
-import Card from '../components/ui/card';
-import Button from '../components/ui/button';
-
 const locations = [
   { name: 'Nampa', population: '100,000+', link: '/locations/nampa' },
   { name: 'Meridian', population: '120,000+', link: '/locations/meridian' },
@@ -25,12 +22,12 @@ const locations = [
     
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       {locations.map((location) => (
-        <Card class="p-6 text-center hover:shadow-lg transition-shadow group">
+        <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-lg transition-shadow group">
           <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
             {location.name}
           </h3>
           <p class="text-muted-foreground text-sm mt-1">Pop. {location.population}</p>
-        </Card>
+        </div>
       ))}
     </div>
     
@@ -38,9 +35,9 @@ const locations = [
       <p class="text-muted-foreground mb-4">
         Don't see your area? We serve all of Canyon and Ada counties!
       </p>
-      <Button variant="outline" href="/contact" class="w-full justify-center">
+      <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-input bg-background text-foreground font-semibold rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors">
         Contact Us
-      </Button>
+      </a>
     </div>
   </div>
 </section>

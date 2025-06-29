@@ -1,6 +1,4 @@
 ---
-import Card from '../components/ui/card';
-import Button from '../components/ui/button';
 
 const services = [
   {
@@ -55,14 +53,14 @@ const services = [
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service) => (
-        <Card class="p-6 hover:shadow-lg transition-shadow">
+        <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
           <div class="text-4xl mb-4">{service.icon}</div>
           <h3 class="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
           <p class="text-muted-foreground mb-4">{service.description}</p>
-          <Button variant="outline" href={service.link} class="w-full justify-center">
+          <a href={service.link} class="inline-flex items-center justify-center w-full px-4 py-2 border border-input bg-background text-foreground font-semibold rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors">
             Learn More
-          </Button>
-        </Card>
+          </a>
+        </div>
       ))}
     </div>
   </div>

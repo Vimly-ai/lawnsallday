@@ -2,7 +2,7 @@
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ThemeToggle from '../components/ui/theme-toggle.astro';
+
 
 export interface Props {
   title: string;
@@ -32,13 +32,13 @@ const { title, description, keywords, schema, children } = Astro.props;
       <div class="container flex h-16 items-center">
         <div class="flex flex-1 items-center justify-between">
           <a href="/" class="flex items-center space-x-2">
-            <span class="text-2xl font-bold">Lawn's All Day</span>
+            <span class="text-2xl font-bold">Lawns All Day</span>
           </a>
           <div class="flex items-center space-x-4">
             <a href="/services" class="text-sm font-medium transition-colors hover:text-primary">Services</a>
             <a href="/about" class="text-sm font-medium transition-colors hover:text-primary">About</a>
             <a href="/contact" class="text-sm font-medium transition-colors hover:text-primary">Contact</a>
-            <ThemeToggle class="ml-4" />
+
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ const { title, description, keywords, schema, children } = Astro.props;
 
     <footer class="border-t">
       <div class="container flex flex-col items-center justify-between py-8 md:flex-row">
-        <p class="text-sm text-muted-foreground"> {new Date().getFullYear()} Lawn's All Day. All rights reserved.</p>
+        <p class="text-sm text-muted-foreground"> {new Date().getFullYear()} Lawns All Day. All rights reserved.</p>
       </div>
     </footer>
   </body>
