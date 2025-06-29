@@ -24,6 +24,7 @@ const { title, description, keywords, schema } = Astro.props;
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    <link rel="stylesheet" href="/styles/theme.css" />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
     <nav class="border-b">
